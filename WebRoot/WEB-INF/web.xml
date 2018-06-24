@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>RMS6.3</display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  
+  	<context-param>
+		<param-name>page-size</param-name>
+		<param-value>5</param-value>
+	</context-param>
+	<!-- 注册CharsetEncodingFilter -->
+  	<filter>
+		<filter-name>CharsetEncodingFilter</filter-name>
+		<filter-class>com.cy.rms.util.filter.CharsetEncodingFilter</filter-class>
+		<!-- 配置CharsetEncodingFilter的初始化参数 -->
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>		
+	</filter>	
+	<!-- 设置CharsetEncodingFilter映射的文件 -->
+	<filter-mapping>
+		<filter-name>CharsetEncodingFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>CharsetEncodingFilter</filter-name>
+		<url-pattern>/servlet/*</url-pattern>
+	</filter-mapping>
+	
+  	<filter>
+		<filter-name>ValidateFilter</filter-name>
+		<filter-class>com.cy.rms.util.filter.ValidateFilter</filter-class>	
+	</filter>	
+	
+	<filter-mapping>
+		<filter-name>ValidateFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>ValidateFilter</filter-name>
+		<url-pattern>/servlet/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>ShowAddProductServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.ShowAddProductServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ShowAddProductServlet</servlet-name>
+		<url-pattern>/servlet/product/ShowAddProductServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddProductServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.AddProductServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AddProductServlet</servlet-name>
+		<url-pattern>/servlet/product/AddProductServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SearchProductServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.SearchProductServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>SearchProductServlet</servlet-name>
+		<url-pattern>/servlet/product/SearchProductServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ShowUpdateProductServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.ShowUpdateProductServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ShowUpdateProductServlet</servlet-name>
+		<url-pattern>/servlet/product/ShowUpdateProductServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UpdateProductServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.UpdateProductServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UpdateProductServlet</servlet-name>
+		<url-pattern>/servlet/product/UpdateProductServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteProductServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.DeleteProductServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DeleteProductServlet</servlet-name>
+		<url-pattern>/servlet/product/DeleteProductServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddFactoryServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.AddFactoryServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AddFactoryServlet</servlet-name>
+		<url-pattern>/servlet/factory/AddFactoryServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SearchFactoryServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.SearchFactoryServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>SearchFactoryServlet</servlet-name>
+		<url-pattern>/servlet/factory/SearchFactoryServlet</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>UpdateFactoryServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.UpdateFactoryServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UpdateFactoryServlet</servlet-name>
+		<url-pattern>/servlet/factory/UpdateFactoryServlet</url-pattern>
+	</servlet-mapping>		
+	
+	<servlet>
+		<servlet-name>ShowUpdateFactoryServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.ShowUpdateFactoryServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ShowUpdateFactoryServlet</servlet-name>
+		<url-pattern>/servlet/factory/ShowUpdateFactoryServlet</url-pattern>
+	</servlet-mapping>	
+		
+	<servlet>
+		<servlet-name>DeleteFactoryServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.DeleteFactoryServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DeleteFactoryServlet</servlet-name>
+		<url-pattern>/servlet/factory/DeleteFactoryServlet</url-pattern>
+	</servlet-mapping>		
+		
+	<servlet>
+		<servlet-name>AddCategoryServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.AddCategoryServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AddCategoryServlet</servlet-name>
+		<url-pattern>/servlet/category/AddCategoryServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SearchCategoryServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.SearchCategoryServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>SearchCategoryServlet</servlet-name>
+		<url-pattern>/servlet/category/SearchCategoryServlet</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>UpdateCategoryServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.UpdateCategoryServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UpdateCategoryServlet</servlet-name>
+		<url-pattern>/servlet/category/UpdateCategoryServlet</url-pattern>
+	</servlet-mapping>		
+	
+	<servlet>
+		<servlet-name>ShowUpdateCategoryServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.ShowUpdateCategoryServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ShowUpdateCategoryServlet</servlet-name>
+		<url-pattern>/servlet/category/ShowUpdateCategoryServlet</url-pattern>
+	</servlet-mapping>	
+		
+	<servlet>
+		<servlet-name>DeleteCategoryServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.DeleteCategoryServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DeleteCategoryServlet</servlet-name>
+		<url-pattern>/servlet/category/DeleteCategoryServlet</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>UploadProductServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.UploadProductServlet</servlet-class>
+		<load-on-startup>10</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UploadProductServlet</servlet-name>
+		<url-pattern>/servlet/product/UploadProductServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ShowUploadProductServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.ShowUploadProductServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ShowUploadProductServlet</servlet-name>
+		<url-pattern>/servlet/product/ShowUploadProductServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ShowAddStockServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.ShowAddStockServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ShowAddStockServlet</servlet-name>
+		<url-pattern>/servlet/stock/ShowAddStockServlet</url-pattern>
+	</servlet-mapping>	
+	
+	
+	<servlet>
+		<servlet-name>AddStockServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.AddStockServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AddStockServlet</servlet-name>
+		<url-pattern>/servlet/stock/AddStockServlet</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>SearchStockServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.SearchStockServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>SearchStockServlet</servlet-name>
+		<url-pattern>/servlet/stock/SearchStockServlet</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>DeleteStockServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.DeleteStockServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DeleteStockServlet</servlet-name>
+		<url-pattern>/servlet/stock/DeleteStockServlet</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>ShowAddSellServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.ShowAddSellServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ShowAddSellServlet</servlet-name>
+		<url-pattern>/servlet/sell/ShowAddSellServlet</url-pattern>
+	</servlet-mapping>	
+	
+	
+	<servlet>
+		<servlet-name>AddSellServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.AddSellServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AddSellServlet</servlet-name>
+		<url-pattern>/servlet/sell/AddSellServlet</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>SearchSellServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.SearchSellServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>SearchSellServlet</servlet-name>
+		<url-pattern>/servlet/sell/SearchSellServlet</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>DeleteSellServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.DeleteSellServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DeleteSellServlet</servlet-name>
+		<url-pattern>/servlet/sell/DeleteSellServlet</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.cy.rms.sysmgr.web.LoginServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/servlet/user/LoginServlet</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>ModifyPasswordServlet</servlet-name>
+		<servlet-class>com.cy.rms.sysmgr.web.ModifyPasswordServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ModifyPasswordServlet</servlet-name>
+		<url-pattern>/servlet/user/ModifyPasswordServlet</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>AddUserServlet</servlet-name>
+		<servlet-class>com.cy.rms.sysmgr.web.AddUserServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AddUserServlet</servlet-name>
+		<url-pattern>/servlet/user/AddUserServlet</url-pattern>
+	</servlet-mapping>	
+	
+
+	<servlet>
+		<servlet-name>DeleteUserServlet</servlet-name>
+		<servlet-class>com.cy.rms.sysmgr.web.DeleteUserServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DeleteUserServlet</servlet-name>
+		<url-pattern>/servlet/user/DeleteUserServlet</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>SearchUserServlet</servlet-name>
+		<servlet-class>com.cy.rms.sysmgr.web.SearchUserServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>SearchUserServlet</servlet-name>
+		<url-pattern>/servlet/user/SearchUserServlet</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>UserValidateServlet</servlet-name>
+		<servlet-class>com.cy.rms.sysmgr.web.UserValidateServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UserValidateServlet</servlet-name>
+		<url-pattern>/servlet/user/UserValidateServlet</url-pattern>
+	</servlet-mapping>	
+	
+	
+	<servlet>
+		<servlet-name>ExitServlet</servlet-name>
+		<servlet-class>com.cy.rms.sysmgr.web.ExitServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ExitServlet</servlet-name>
+		<url-pattern>/servlet/user/ExitServlet</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>StockExportServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.StockExportServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>StockExportServlet</servlet-name>
+		<url-pattern>/servlet/stock/StockExportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SellExportServlet</servlet-name>
+		<servlet-class>com.cy.rms.basedata.web.SellExportServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>SellExportServlet</servlet-name>
+		<url-pattern>/servlet/sell/SellExportServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.jsp</location>
+	</error-page>
+	
+		<error-page>
+		<error-code>500</error-code>
+		<location>/500.jsp</location>
+	</error-page>
+</web-app>

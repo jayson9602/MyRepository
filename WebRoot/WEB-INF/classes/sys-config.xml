@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<db-info>
+		<driver-name>com.mysql.jdbc.Driver</driver-name>
+		<url>jdbc:mysql://localhost:3306/rms</url>
+		<user-name>root</user-name>
+		<password>ide4u</password>
+	</db-info>
+	<dao-factory>
+		<product-dao-factory>com.cy.rms.basedata.dao.ProductDaoFactory4MySql</product-dao-factory>
+		 <!-- 
+		 <product-dao-factory>com.cy.rms.basedata.dao.ProductDaoFactory4Oracle</product-dao-factory>
+		  -->
+		<category-dao-factory>com.cy.rms.basedata.dao.CategoryDaoFactory4MySql</category-dao-factory>
+		<factory-dao-factory>com.cy.rms.basedata.dao.FactoryDaoFactory4MySql</factory-dao-factory>
+		<stock-dao-factory>com.cy.rms.basedata.dao.StockDaoFactory4MySql</stock-dao-factory>
+		<sell-dao-factory>com.cy.rms.basedata.dao.SellDaoFactory4MySql</sell-dao-factory>
+		<user-dao-factory>com.cy.rms.sysmgr.dao.UserDaoFactory4MySql</user-dao-factory>
+	</dao-factory>
+</config>
